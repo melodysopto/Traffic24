@@ -78,8 +78,8 @@ if(isset($_GET['name']) && isset($_GET['code']))
                 $mail->Host = "smtp.gmail.com";
                 $mail->Port = 465; 
                 $mail->IsHTML(true);
-                $mail->Username = "cleopatra.sopto7@gmail.com";
-                $mail->Password = "sudiptastanley";
+                $mail->Username = "";
+                $mail->Password = "";
                 $mail->AddAddress($email, 'ashu');
                 $mail->Subject = "Verify your account";
                 $mail->Body    = 'Your Activation Code is '.$code.' Please Click <a href="localhost/Web/php/signup.php?name='.$name.'&code='.$code.'">Here </a>to activate your account.';
