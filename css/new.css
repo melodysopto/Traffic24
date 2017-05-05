@@ -1,0 +1,82 @@
+body {
+/*   background-image: url("back1.jpg");*/
+}
+h1 {
+    color: white;
+    font-family: verdana;
+    font-size: 50px;
+}
+h2 {
+    color: white;
+    font-family: verdana;
+    font-size: 30px;
+}
+input[type=text] {
+    width: 30%;
+    margin: 5px 5px;
+    box-sizing: w3-round;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    background-color: white;
+    background-position: 360px 2px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 15px;
+}
+input[type=email] {
+    width: 30%;
+    margin: 5px 5px;
+    box-sizing: w3-round;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    background-color: white;
+    background-position: 360px 2px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 15px;
+}
+input[type=password] {
+    width: 30%;
+    margin: 5px 5px;
+    box-sizing: w3-round;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    background-color: white;
+    background-position: 360px 2px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 15px;
+}
+ input[type=submit]{
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 8px;
+    cursor: pointer;
+}
+.button {
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 8px;
+    cursor: pointer;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 3, 2017, 11:35:59 PM
+    Author     : User
+*/
+
