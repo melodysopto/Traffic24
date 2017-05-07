@@ -13,9 +13,6 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
     </head>
     <body>
         <style>
-            body{
-                background: url("../img/melo.jpg");
-            }
             h1,h2,h3,h4{
                 color:  black;
             }
@@ -28,7 +25,8 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
     session_destroy();   // destroy session data in storage
 }
         //require ("config.php");
-        $DbConn = mysqli_connect("localhost", "root", "", "amateur");
+        /*$DbConn = mysqli_connect("localhost", "root", "", "traffic24");*/
+        $DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
         if (isset($_POST['btn'])) {
             $name = mysqli_real_escape_string($DbConn, $_POST['fname']);
             $pass = mysqli_real_escape_string($DbConn, $_POST['fname1']);
@@ -58,7 +56,7 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
                 print("<br><br>&ensp;<h3>Please <a href=\"index.html\"> Register </a>first!</h3>");
             }
         }
-        print("<br><br><a href=\"home.php\" class=\"button\">Go to homepage</a>");
+        print("<br><br><a href=\"../index.html\" class=\"button\">Go to homepage</a>");
         print("<br><br><a href=\"logout.php\" class=\"button\">Log out</a>");
         ?>
         

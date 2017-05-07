@@ -1,6 +1,7 @@
 <?php
 include ('../html/common.html');
-$DbConn = mysqli_connect("localhost", "root","", "amateur");
+$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
+/*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
 session_start();
 $_SESSION['LAST_ACTIVITY'] = time();
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {

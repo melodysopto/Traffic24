@@ -8,7 +8,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     session_destroy();
        // destroy session data in storage
 }
-$DbConn = mysqli_connect("localhost", "root", "", "amateur");
+$DbConn = mysqli_connect("localhost", "traffic24", "traffic24", "traffic24");
+/*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
 if(isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['day']) && isset($_POST['hour'])){
 		$lat = $_POST["latitude"];
 		$long = $_POST["longitude"];

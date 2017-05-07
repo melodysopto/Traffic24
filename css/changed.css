@@ -67,7 +67,7 @@ input[type=submit]{
           /*background: url("../img/n4.jpg")*/
           background-color: white;
            }
-    #map { height: 400px }
+    #map { height: 40s0px }
     @media all and (max-width: 991px) {
     #map-outer  { height: 700px }
     }
