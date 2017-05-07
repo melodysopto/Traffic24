@@ -43,7 +43,7 @@ var latitude, longitude;
         url:"../php/new.php",
         data:{"latitude": latitude, "longitude": longitude, "day": day, "hour": hour},
         success:function(msg){
-          alert(msg);
+          //alert(msg);
         }
     });
             console.log(position.coords.latitude+" "+position.coords.longitude);
