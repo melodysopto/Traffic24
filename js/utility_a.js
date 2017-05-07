@@ -10,7 +10,7 @@ var latitude, longitude;
           return;*/
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 23.81, lng: 90.4125},
-          zoom: 14
+          zoom: 15
         });
 
         heatmap = new google.maps.visualization.HeatmapLayer({
