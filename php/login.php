@@ -9,7 +9,7 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
         <title>Login Page</title>
      
     <!-- for mobile view -->
-    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <style>

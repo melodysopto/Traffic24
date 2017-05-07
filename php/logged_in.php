@@ -51,7 +51,7 @@ if(isset($_POST['em'])){
         <link rel="stylesheet" href="../css/new.css">
         <link rel="stylesheet" href="../css/w3.css">
         <script type="text/javascript" src="../js/modernizr.custom.86080.js"></script>
-        <title>Sign up or Log in</title>
+        <title>User Account</title>
         
     </head>
     <body>
@@ -89,10 +89,10 @@ if(isset($_POST['em'])){
         <?php if(isset($_SESSION['use'])){
             echo "<center><h2><b>Welcome ".$_SESSION['use']."!</b></h2></center>";
             if($_SESSION['type'] == 'g'){
-                echo "<br><a href=\"new_a.php\" class=\"button\">get your location</a>";
+                echo "<br><a href=\"new_a.php\" class=\"button\">update your location</a>";
             }
             else
-                echo "<br><a href=\"getloc.php\" class=\"button\">get your location</a>";
+                echo "<br><a href=\"getloc.php\" class=\"button\">update traffic</a>";
             echo "<br><a href=\"home.php\" class=\"button\">Go to homepage</a>
             <br><a href=\"logout.php\" class=\"button\">Log out</a>";
             if(isset($_SESSION["reviewed"])){

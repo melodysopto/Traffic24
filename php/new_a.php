@@ -33,8 +33,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 <html>
   <head>
-    <title>Traffic Intensity</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Update</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
      
     <link rel="stylesheet" href="../css/changed.css">

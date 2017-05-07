@@ -5,8 +5,8 @@ session_start();
 
 <html>
   <head>
-    <title>Update as admin</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Update</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/new.css">
 
          <link rel="stylesheet" type="text/css" href="../css/demo.css">
@@ -116,7 +116,7 @@ session_start();
 		}
 
 		function placeMarkerAndPanTo(latLng, map) {
-			var image = '../img/jam.png';
+			var image = '../img/bus.png';
 		  	var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
