@@ -1,7 +1,7 @@
 <?php
 include ('../html/common.html');
-$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
-/*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
+/*$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");*/
+$DbConn = mysqli_connect("localhost", "root","", "traffic24");
 session_start();
 $_SESSION['LAST_ACTIVITY'] = time();
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
@@ -38,9 +38,9 @@ if(isset($_POST['op']))
     $d = strip_tags($d);
     $h = strip_tags($h);
   	if($_POST['op'] == "yes" && isset($_SESSION["latitude"]) && isset($_SESSION["longitude"])){
-  		$up = "update Traffic_points set intensity=intensity+1 where latitude ='" . $lat . "' and  longitude = '" . $long . "'";
+  		$up = "update traffic_points set intensity=intensity+1 where latitude ='" . $lat . "' and  longitude = '" . $long . "'";
         $retu = mysqli_query($DbConn,$up);
-  		$add = "insert into Traffic_points(latitude,longitude,intensity,day,hour) values('$lat','$long','1','$d','$h')";
+  		$add = "insert into traffic_points(latitude,longitude,intensity,day,hour) values('$lat','$long','1','$d','$h')";
   		$reti = mysqli_query($DbConn,$add);
   		$_SESSION["success"] = 1;
         header("Location: new_a.php");
@@ -48,9 +48,9 @@ if(isset($_POST['op']))
   		//print($_SESSION["latitude"]);
   	}
   	else{
-  		$up = "update Traffic_points set intensity=intensity-1 where latitude ='" . $lat . "' and  longitude = '" . $long . "' and intensity>0";
+  		$up = "update traffic_points set intensity=intensity-1 where latitude ='" . $lat . "' and  longitude = '" . $long . "' and intensity>0";
         $reti = mysqli_query($DbConn,$up);
-       	$add = "insert into Traffic_points(latitude,longitude,intensity) values('$lat','$long','0','$d','$h')";
+       	$add = "insert into traffic_points(latitude,longitude,intensity) values('$lat','$long','0','$d','$h')";
         $retu = mysqli_query($DbConn,$add);
         $_SESSION["success"] = 1;
         header("Location: new_a.php");

@@ -8,15 +8,16 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     session_destroy();
        // destroy session data in storage
 }
-$DbConn = mysqli_connect("localhost", "traffic24", "traffic24", "traffic24");
-/*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
+/*$DbConn = mysqli_connect("localhost", "traffic24", "traffic24", "traffic24");*/
+$DbConn = mysqli_connect("localhost", "root","", "traffic24");
 if(isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['day']) && isset($_POST['hour'])){
 		$lat = $_POST["latitude"];
 		$long = $_POST["longitude"];
 		$day = $_POST["day"];
 		$hour = $_POST["hour"];
 		$intensity = 50;
-		$in = mysqli_query($DbConn, "insert into Traffic_points values('$lat','$long','$intensity','$day','$hour')");
+		$in = mysqli_query($DbConn, "insert into traffic_points values('$lat','$long','$intensity','$day','$hour')");
+		echo $in;
 		echo $lat;
 		echo " ";
 		echo $long;
