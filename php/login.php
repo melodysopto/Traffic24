@@ -1,4 +1,5 @@
 <?php session_start();
+$_SESSION["success"] = 0;
 $_SESSION['LAST_ACTIVITY'] = time();?>
 <html>
     <head>
@@ -37,9 +38,11 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
             $dup = "select name from users where name = '" . $name . "'";
             $result = mysqli_query($DbConn, $dup);
             if (mysqli_num_rows($result)) {
-                $dup1 = mysqli_query($DbConn, "select name from users where name ='" . $name . "' and  pass = '" . $pass . "'");
+                $dup1 = mysqli_query($DbConn, "select name,type from users where name ='" . $name . "' and  pass = '" . $pass . "'");
                 if (mysqli_num_rows($dup1) == 1) {
+                    $row = mysqli_fetch_row($dup1);
                     $_SESSION['use']=$name;
+                    $_SESSION['type'] = $row[1];
                     header("Location:logged_in.php"); 
                     /*print("<h2>Welcome " . "$name" . "!</h2>");
                     

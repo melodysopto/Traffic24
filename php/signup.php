@@ -10,24 +10,31 @@ if(isset($_GET['name']) && isset($_GET['code']))
                 $name=$_GET['name'];
                 $code=$_GET['code'];
                 //print($name);
-                echo $name;
-                echo $code;
+                /*echo $name;
+                echo $code;*/
                 /*mysql_connect('localhost','root','');
                 mysql_select_db('sample');*/
-                $select=mysqli_query($DbConn,"select name,email,pass,type from verification where name='$name' and code='$code'");
-                if($select)
-                {
-                    while($row=mysqli_fetch_array($select))
-                    {
-                        $name = $row['name'];
-                        $email = $row['email'];
-                        $password = $row['pass'];
-                        $type = $row['type'];
-                    }
-                    $insert_user=mysqli_query($DbConn,"insert into users values('$name','$email','$password','$type')");
-                    $delete=mysqli_query($DbConn,"delete from verification where name='$name' and code='$code'");
+                $select = mysqli_query($DbConn, "select * from verification where name ='" . $name . "' and  code = '" . $code . "'");
+                /*$select = mysqli_query($DbConn,"select name,email,pass,type from verification where name ='" . $name . "' and code ='".$code."'");*/
+    
+                $i = mysqli_num_rows($select);
+                print("\n");
+                print($i);
+                while($i > 0) {
+                    $row = mysqli_fetch_row($select);
+                    $i--;
+                    $name2 = $row[0]; 
+                        $email = $row[1];
+                        $password = $row[2];
+                        $type = $row[3];
+                        $insert_user=mysqli_query($DbConn,"insert into users values('$name2','$email','$password','$type')");
+                        $delete=mysqli_query($DbConn,"delete from verification where name='".$name."' and code='".$code."'");
+                        $_SESSION['use'] = $name2;
+                        $_SESSION['type'] = $type;
+                        header("Location:logged_in.php");
                 }
-                else print("paay nai");
+                
+                
             }
 
          if(isset($_POST['btn']) || isset($_POST['btn1']))
@@ -51,9 +58,13 @@ if(isset($_GET['name']) && isset($_GET['code']))
             }
             else{
 
-                if(isset($_POST['btn']))
+                if(isset($_POST['btn'])){
                     $insert=mysqli_query($DbConn,"insert into verification values('$name','$email','$pass','g','$code')");
-                else $insert=mysqli_query($DbConn,"insert into verification values('$name','$email','$pass','d','$code')");
+                }
+                else if(isset($_POST['btn1'])){
+                    $insert=mysqli_query($DbConn,"insert into verification values('$name','$email','$pass','a','$code')");
+                }
+                /*print($code+"****************");*/
                 /*$message = "Your Activation Code is ".$code."";
                 $to=$email;
                 $subject="Activation Code For Traffic Updater.";
@@ -72,7 +83,7 @@ if(isset($_GET['name']) && isset($_GET['code']))
                 $mail->IsSMTP();
                 $mail->SMTPDebug = 2;
                 $mail->From = "traffic.updater.bd@gmail.com";
-                $mail->FromName = "Service";
+                $mail->FromName = "Traffic24";
                 $mail->SMTPAuth = true; 
                 $mail->SMTPSecure = 'ssl'; 
                 $mail->Host = "smtp.gmail.com";
@@ -100,6 +111,7 @@ if(isset($_GET['name']) && isset($_GET['code']))
                 //if (mail($subject,$message, $headers))
                 {
                     echo "Successfully sent";
+                    header("Location:../index.html");
                 } 
                 else {
                     echo "Mailed Error: " . $mail->ErrorInfo;

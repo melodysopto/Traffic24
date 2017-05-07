@@ -18,6 +18,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     $_SESSION["longitude"] = $_POST["longitude"];
     $_SESSION["day"] = $_POST["day"];
     $_SESSION["hour"] = $_POST["hour"];
+    $_SESSION["success"] = 0;
     /*$lat = $_POST["latitude"];
     $hello = $_POST["latitude"];
     $long = $_POST["longitude"];
