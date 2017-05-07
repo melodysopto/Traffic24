@@ -4,8 +4,8 @@ require "PHPMailer-master/class.phpmailer.php";
 session_start();
 $_SESSION['LAST_ACTIVITY'] = time();
         //require ("config.php");
-/*$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");*/
-$DbConn = mysqli_connect("localhost","root,"", "traffic24");
+$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
+/*$DbConn = mysqli_connect("localhost","root,"", "traffic24");*/
 if(isset($_GET['name']) && isset($_GET['code']))
             {
                 $name=$_GET['name'];

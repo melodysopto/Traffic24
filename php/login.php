@@ -25,8 +25,8 @@ $_SESSION['LAST_ACTIVITY'] = time();?>
     session_destroy();   // destroy session data in storage
 }
         //require ("config.php");
-        $DbConn = mysqli_connect("localhost", "root", "", "traffic24");
-        /*$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");*/
+        /*$DbConn = mysqli_connect("localhost", "root", "", "traffic24");*/
+        $DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
         if (isset($_POST['btn'])) {
             $name = mysqli_real_escape_string($DbConn, $_POST['fname']);
             $pass = mysqli_real_escape_string($DbConn, $_POST['fname1']);

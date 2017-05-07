@@ -10,8 +10,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
            header("Location: ../index.html");  
        }
   
-	/*$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");*/
-  $DbConn = mysqli_connect("localhost", "root","", "traffic24");
+	$DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
+  /*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
 
   /*$up = "update Traffic_points set intensity=intensity/2 where day ='" . $day . "' and  hour = '" . $hour . "'";
   $ret_u = mysqli_query($DbConn,$up);*/
