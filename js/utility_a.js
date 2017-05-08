@@ -112,7 +112,7 @@ var latitude, longitude;
       var dx = new Date();
       var day = dx.getDay();
       var hour = dx.getHours();
-      if(day==obj[count-1][3] && hour==obj[count-1][4]) { 
+      if(hour==obj[count-1][4]) { 
   	    tmp = {location: new google.maps.LatLng(obj[count-1][0],obj[count-1][1]), weight: obj[count-1][2]};
         arr.push(tmp);
       }
