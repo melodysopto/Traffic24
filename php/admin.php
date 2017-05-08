@@ -9,7 +9,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
        // destroy session data in storage
 }
 $DbConn = mysqli_connect("localhost", "traffic24", "traffic24", "traffic24");
-/*$DbConn = mysqli_connect("localhost", "root","", "traffic24");*/
+//$DbConn = mysqli_connect("localhost", "root","", "traffic24");
 if(isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['day']) && isset($_POST['hour'])){
 		$lat = $_POST["latitude"];
 		$long = $_POST["longitude"];

@@ -5,7 +5,7 @@ session_start();
 $_SESSION['LAST_ACTIVITY'] = time();
         //require ("config.php");
 $DbConn = mysqli_connect("localhost", "traffic24","traffic24", "traffic24");
-/*$DbConn = mysqli_connect("localhost","root,"", "traffic24");*/
+//$DbConn = mysqli_connect("localhost","root","", "traffic24");
 if(isset($_GET['name']) && isset($_GET['code']))
             {
                 $name=$_GET['name'];
@@ -94,7 +94,7 @@ if(isset($_GET['name']) && isset($_GET['code']))
                 $mail->Password = "webproject2543";
                 $mail->AddAddress($email, 'Melody');
                 $mail->Subject = "Verify your account";
-                $mail->Body    = 'Your Activation Code is '.$code.' Please Click <a href="csedu.cf/traffic24/php/signup.php?name='.$name.'&code='.$code.'">Here </a>to activate your account.';
+                $mail->Body    = 'Your Activation Code is '.$code.' Please Click <a href="localhost/Web/php/signup.php?name='.$name.'&code='.$code.'">Here </a>to activate your account.';
                 $mail->IsHTML(true);
                 $text = 'Text version of email';
                 $html = '<html><body>HTML version of email</body></html>';

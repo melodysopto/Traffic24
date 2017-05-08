@@ -53,7 +53,9 @@
             <div class="bgimg w3-display-container w3-text-white">
             <div class="w3-display-topleft w3-container w3-xlarge">
     <p><button onclick="document.getElementById('sign').style.display='block'" class="button">Sign up</button>
-    <button onclick="document.getElementById('log').style.display='block'" class="button">Log in</button></p>
+    <button onclick="document.getElementById('log').style.display='block'" class="button">Log in</button>
+    <button onclick="document.getElementById('demoU').style.display='block'" class="button">Demo for user</button>
+    <button onclick="document.getElementById('demoA').style.display='block'" class="button">Demo for admin</button></p>
   </div>
   </div>
                 <!-- h1>CSS3 <span>Fullscreen Slideshow</span></h1>
@@ -96,6 +98,40 @@
       <form action = "php/login.php" method="POST">
        <input type="text" name="fname" required placeholder="Username">
         <br><input type="password" name="fname1" required placeholder="Password">
+            <br> <br> 
+            <input type="submit" name="btn" value="Login"><br><br>
+        </form>
+    </div>
+  </div>
+</div>
+<div id="demoU" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-cadet w3-display-container">
+      <span onclick="document.getElementById('demoU').style.display='none'" class="w3-button w3-display-topright w3-large w3-text-white">x</span>
+      <h2>Demo log in for user</h2>
+    </div>
+    <div class="w3-container">
+    <br>
+      <form action = "php/login.php" method="POST">
+       <input type="text" name="fname" value="demo_user" required placeholder="Username">
+        <br><input type="password" name="fname1" value="12345" required placeholder="Password">
+            <br> <br> 
+            <input type="submit" name="btn" value="Login"><br><br>
+        </form>
+    </div>
+  </div>
+</div>
+<div id="demoA" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-cadet w3-display-container">
+      <span onclick="document.getElementById('demoA').style.display='none'" class="w3-button w3-display-topright w3-large w3-text-white">x</span>
+      <h2>Demo log in for admin</h2>
+    </div>
+    <div class="w3-container">
+    <br>
+      <form action = "php/login.php" method="POST">
+       <input type="text" name="fname" value="demo_admin" required placeholder="Username">
+        <br><input type="password" name="fname1" value="12345" required placeholder="Password">
             <br> <br> 
             <input type="submit" name="btn" value="Login"><br><br>
         </form>
