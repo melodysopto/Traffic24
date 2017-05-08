@@ -107,7 +107,7 @@ session_start();
 				data:{"latitude": e.latLng.lat().toFixed(4), "longitude": e.latLng.lng().toFixed(4),
 					"day": day, "hour": hour},
 				success:function(msg){
-				  alert(msg);
+				  //alert(msg);
 				}
 			  });
 		  });

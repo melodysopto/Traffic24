@@ -36,7 +36,7 @@ var latitude, longitude;
             var x = new Date();
             var day = x.getDay();
             var hour = x.getHours();
-            alert(latitude+" "+longitude+" "+day+" "+hour);
+            //alert(latitude+" "+longitude+" "+day+" "+hour);
 
             $.ajax({
         type:"POST",
